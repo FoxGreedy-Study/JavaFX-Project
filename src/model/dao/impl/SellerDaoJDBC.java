@@ -128,11 +128,12 @@ public class SellerDaoJDBC implements SellerDAO {
 
 	private Seller instantiateSeller(Department department, ResultSet resultSet) throws SQLException {
 		return new Seller(resultSet.getInt("Id"), resultSet.getString("Name"), resultSet.getString("Email"),
-				resultSet.getDate("birthDate"), resultSet.getDouble("baseSalary"), department);
+				new java.util.Date(resultSet.getTimestamp("BirthDate").getTime()),
+				resultSet.getDouble("baseSalary"), department);
 	}
 
 	@Override
-	public List<Seller> finAll() {
+	public List<Seller> findAll() {
 		PreparedStatement statement = null;
 		ResultSet resultSet = null;
 

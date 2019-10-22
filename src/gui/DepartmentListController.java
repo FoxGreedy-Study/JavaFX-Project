@@ -1,14 +1,10 @@
 package gui;
 
-import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
-
-import javax.xml.bind.DataBindingException;
 
 import application.Main;
 import db.DbException;
@@ -37,7 +33,7 @@ import javafx.stage.Stage;
 import model.entities.Department;
 import model.services.DepartmentService;
 
-public class DepartmentViewController implements Initializable, DataChangeListener {
+public class DepartmentListController implements Initializable, DataChangeListener {
 
 	private DepartmentService service;
 
